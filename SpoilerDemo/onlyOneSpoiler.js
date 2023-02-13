@@ -25,60 +25,61 @@
  */
 
 function InitSpoiler(spoiler){
-
-  // is iterable? ---------------------------------------------------
+  // for iterable structures ----------------------------------------
   if (spoiler[Symbol.iterator] != undefined){
     spoiler.forEach(block => {
-      let contentHeight = block.children[1].children[0].offsetHeight;
-  
-      // hide content in closed spoilers
-      block.children[1].style.overflow = 'hidden';
-  
-      // do have active class?
-      if (block.classList.contains('_opened')){
-        block.children[1].style.height = String(contentHeight) + 'px';
-      } else {
-        block.children[1].style.height = 0;
-      }
-    
-      // click event for title
+      prepareSpoiler(block);
+
       block.children[0].addEventListener('click', function(event){
         if (block.classList.contains('_opened')){
-          block.classList.remove('_opened');
-          block.children[1].style.height = '0';
+          closeSpoiler(block)
         } else {
           spoiler.forEach(item => {
             if (item.classList.contains('_opened')){
-              item.classList.remove('_opened');
-              item.children[1].style.height = '0';
+              closeSpoiler(block)
             }
           });
-          block.classList.add('_opened');
-          block.children[1].style.height = String(contentHeight) + 'px';
+          openSpoiler(block)
         }
       });
     });
-  } 
-  // ----------------------------------------------------------------
-  else {
-    let contentHeight = spoiler.children[1].children[0].offsetHeight;
-    
-    spoiler.children[1].style.overflow = 'hidden';
+  }
 
-    if (spoiler.classList.contains('_opened')){
-      spoiler.children[1].style.height = String(contentHeight) + 'px';
-    } else {
-      spoiler.children[1].style.height = 0;
-    }
+  // for not iterable structures -------------------------------------
+  else {
+    prepareSpoiler(spoiler);
 
     spoiler.children[0].addEventListener('click', function(event){
       if (spoiler.classList.contains('_opened')){
-        spoiler.classList.remove('_opened');
-        spoiler.children[1].style.height = '0';
+        closeSpoiler(spoiler);
       } else {
-        spoiler.classList.add('_opened');
-        spoiler.children[1].style.height = String(contentHeight) + 'px';
+        openSpoiler(spoiler);
       }
     });
   }
+}
+
+
+function prepareSpoiler(spoiler, contentHeight){
+  // hide content in closed spoilers
+  spoiler.children[1].style.overflow = 'hidden';
+
+  // do have _opened class?
+  if (spoiler.classList.contains('_opened')){
+    spoiler.children[1].style.height = String(spoiler.children[1].children[0].offsetHeight) + 'px';
+  } else {
+    spoiler.children[1].style.height = 0;
+  }
+}
+
+
+function openSpoiler(spoiler, contentHeight=0){
+  spoiler.classList.add('_opened');
+  spoiler.children[1].style.height = String(spoiler.children[1].children[0].offsetHeight) + 'px';
+}
+
+
+function closeSpoiler(spoiler){
+  spoiler.classList.remove('_opened');
+  spoiler.children[1].style.height = '0';
 }
