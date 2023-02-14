@@ -1,0 +1,62 @@
+@import url(../../reset.css);
+
+body{
+  padding: 10px;
+  background-color: #333;
+}
+
+.ico ul{
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 18px;
+}
+
+.ico ul li a{
+  display: block;
+  color: inherit;
+  display: flex;
+  gap: 5px;
+}
+.ico ul li a:hover, .ico ul li a:focus{
+  color: cornflowerblue;
+}
+.ico ul li a:active{
+  color: crimson;
+}
+
+.ico ul li span{
+  font-family: serif;
+}
+
+.iconsFont{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.iconsFont div{
+  width: 100px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 2px solid #000;
+  box-shadow: 0 2px 2px #000;
+}
+.iconsFont div::before{
+  font-size: 40px;
+}
+
+.iconsFont div:hover{
+  background-color: #eee;
+  color:darkgoldenrod;
+}
+.iconsFont div:active{
+  transform: translate(0, 2px);
+  box-shadow: 0 0 0;
+  color: crimson;
+}

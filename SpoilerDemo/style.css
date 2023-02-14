@@ -1,4 +1,4 @@
-@import url(reset.css);
+@import url(../reset.css);
 
 
 body {
@@ -39,10 +39,10 @@ body {
   top: 8px;
   right: 0px;
   background-color: #fff;
+  transition: all 0.2s ease 0s;
 }
 .block__title::after{
   transform: rotate(-90deg);
-  transition: all 0.2s ease 0s;
 }
 .block__toggle{
   margin-top: 0px;
@@ -56,5 +56,8 @@ body {
 
 ._opened .block__title::after{
   opacity: 0;
-  transform: rotate(0);
+  transform: rotate(0deg);
+}
+._opened .block__title::before{
+  transform: rotate(180deg);
 }
