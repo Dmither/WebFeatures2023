@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scheme Change</title>
+
+  <meta name="prefers-color-scheme" content="light dark">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="light.css" data-scheme="light">
+  <!-- стилі підтягуються за медіазапитом переважної (вподобаної) кольорової схеми (якщо така темна): -->
+  <!-- ??? чи буде блимати світла схема при великому обсязі ??? -->
+  <link rel="stylesheet" href="dark.css" data-scheme="dark" media="(prefers-color-scheme: dark)">
+</head>
+<body>
+  <div class="sky">
+    <div class="luminary"></div>
+  </div>
+  
+
+  <fieldset class="switcher">
+    <legend class="switcher__legend">Scheme</legend>
+    <input type="radio" name="color-scheme" value="light" aria-label="light" class="switcher__radio switcher__radio_light _icon-sun">
+    <input type="radio" name="color-scheme" value="auto" checked aria-label="system" class="switcher__radio switcher__radio_auto _icon-half">
+    <input type="radio" name="color-scheme" value="dark" aria-label="dark" class="switcher__radio switcher__radio_dark _icon-moon">
+    <div class="switcher__round">
+  </fieldset>
+
+  <script src="script.js"></script>
+</body>
+</html>

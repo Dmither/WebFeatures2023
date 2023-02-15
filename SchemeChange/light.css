@@ -1,0 +1,9 @@
+:root{
+  --sky-color: lightskyblue;
+  --luminary-color: lemonchiffon;
+}
+
+
+.switcher__radio:checked{
+  filter: invert(1);
+}

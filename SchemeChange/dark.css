@@ -1,0 +1,11 @@
+:root{
+  --sky-color: rgb(22, 30, 41);
+  --luminary-color: ghostwhite;
+}
+
+.switcher__radio:checked{
+  filter: invert(1);
+}
+.switcher{
+  filter: invert(1);
+}
