@@ -36,7 +36,7 @@ function InitSpoiler(spoiler){
         } else {
           spoiler.forEach(item => {
             if (item.classList.contains('_opened')){
-              closeSpoiler(block)
+              closeSpoiler(item)
             }
           });
           openSpoiler(block)
