@@ -10,78 +10,47 @@
 <body>
   <div class="wrapper">
     <form action="">
-      <h1>Payment form</h1>
-      <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>
-      <section>
-        <h2>Contact information</h2>
-        <fieldset>
-          <legend>Title</legend>
-          <ul>
-            <li>
-              <label for="title_1">
-                <input type="radio" id="title_1" name="title" id="M.">
-                Mister
-              </label>
-            </li>
-            <li>
-              <label for="title_2">
-                <input type="radio" id="title_2" name="title" id="Ms.">
-                Miss
-              </label>
-            </li>
-          </ul>
-        </fieldset>
-        <p>
-          <label for="name">
-            <span>Name: </span>
-            <strong><abbr title="required">*</abbr></strong>
-          </label>
-          <input type="text" id="name" name="username">
-        </p>
-        <p>
-          <label for="mail">
-            <span>E-mail: </span>
-            <strong><abbr title="required">*</abbr></strong>
-          </label>
-          <input type="email" name="usermail" id="mail">
-        </p>
-        <p>
-          <label for="pwd">
-            <span>Password: </span>
-            <strong><abbr title="required">*</abbr></strong>
-          </label>
-          <input type="password" name="password" id="pwd">
-        </p>
-      </section>
-      <section>
-        <h2>Payment information</h2>
-        <p>
-          <label for="card">
-            <span>Card type:</span>
-          </label>
-          <select name="usercard" id="card">
-            <option value="visa">Visa</option>
-            <option value="mc">Mastercard</option>
-            <option value="amex">American Express</option>
-          </select>
-        </p>
-        <p>
-          <label for="number">
-            <span>Card number: </span>
-            <strong><abbr title="required">*</abbr></strong>
-          </label>
-          <input type="number" name="cardnumber" id="number">
-        </p>
-        <p>
-          <label for="date">
-            <span>Expiration date:</span>
-            <strong><abbr title="required">*</abbr></strong>
-            <em>formatted as mm/yy</em>
-          </label>
-          <input type="date" name="expiration" id="date">
-        </p>
-      </section>
-      <p><button type="submit">Validate the payment</button></p>
+      <fieldset name="input mods"> 
+        <legend>input mods</legend> 
+        <p><input type="text"> text</p>
+        <p><input type="email"> email</p>
+        <p><input type="password"> password</p>
+        <p><input type="tel"> tel</p>
+        <p><input type="url"> url</p>
+        <p><input type="search"> search</p>
+        <p><input type="week"> week</p>
+        <p><input type="month"> month</p>
+        <p><input type="number"> number</p>
+        <p><input type="time"> time</p>
+        <p><input type="date"> date</p>
+        <p><input type="datetime-local"> datetime</p>
+        <p><input type="color"> color</p>
+        <p><input type="file"> file</p>
+        <p><input type="range" min="0" max="100" step="10"> range</p>
+        <p><input type="image"> image</p>
+      </fieldset>
+      
+      
+      <p><input type="radio"> radio</p>
+      <p><input type="checkbox"> checkbox</p>
+
+
+      <p><input type="hidden"> hidden</p>
+
+      <p><input type="button"> button</p>
+      <p><input type="reset"> reset</p>
+      <p><input type="submit"> submit</p>
+
+      <input list="browsers">
+
+      <datalist id="browsers">
+        <option value="Internet Explorer">
+        <option value="Firefox">
+        <option value="Chrome">
+        <option value="Opera">
+        <option value="Safari">
+      </datalist> 
+
     </form>
   </div>
 </body>
