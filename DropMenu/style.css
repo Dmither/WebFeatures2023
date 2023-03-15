@@ -7,15 +7,8 @@
 	background-color: aliceblue;
 	display: flex;
 }
-
-
-
-
 .drop {
 	position: relative;
-}
-.drop:hover{
-
 }
 .link {
 	display: block;
@@ -50,4 +43,22 @@
 	height: -webkit-max-content;
 	height: -moz-max-content;
 	height: max-content;
+}
+@media (max-width: 767px) {
+	.menu{
+		flex-direction: column;
+	}
+	.drop__body {
+		background-color: aliceblue;
+		position: absolute;
+		top: 0%;
+		left: 100%;
+		min-width: -webkit-max-content;
+		min-width: -moz-max-content;
+		min-width: max-content;
+		width: 100%;
+		opacity: 0;
+		height: 0;
+		overflow: hidden;
+	}
 }
