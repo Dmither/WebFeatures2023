@@ -1,17 +1,41 @@
 @import "../reset.css";
 
 .menu{
-  max-width: 80px;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+	background-color: aliceblue;
+	display: flex;
 }
 
-.dropdown {
+
+
+
+.drop {
 	position: relative;
 }
-/* sublist */
-.dropdown__list {
+.drop:hover{
+
+}
+.link {
+	display: block;
+	padding: 5px;
+	color: inherit;
+	text-decoration: underline;
+	outline: none;
+}
+.link:hover, 
+.link:focus {
+	background-color: blanchedalmond;
+}
+.drop__title {
+	width: 100%;
+}
+.drop__body {
+	background-color: aliceblue;
 	position: absolute;
-	top: 0;
-	left: 0;
+	top: 100%;
+  left: 0%;
 	min-width: -webkit-max-content;
 	min-width: -moz-max-content;
 	min-width: max-content;
@@ -19,11 +43,9 @@
 	opacity: 0;
 	height: 0;
 	overflow: hidden;
-  
-  left: 100%;
 }
-.dropdown:hover .dropdown__list,
-.dropdown_active .dropdown__list {
+.drop:hover .drop__body,
+.drop_active .drop__body {
 	opacity: 100%;
 	height: -webkit-max-content;
 	height: -moz-max-content;

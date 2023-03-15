@@ -1,5 +1,6 @@
 
-let dropdowns = document.querySelectorAll(".dropdown");
+let dropdowns = document.querySelectorAll(".drop");
+console.log(dropdowns)
 
 dropdowns.forEach(dropdown => {
 	initDrop(dropdown);
