@@ -1,4 +1,4 @@
-// "use strict"
+
 
 let spoilersList = document.querySelectorAll('.blocks1 .only-one-spoiler');
 InitSpoiler(spoilersList);
