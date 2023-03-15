@@ -24,7 +24,7 @@
  * Колекція пов'язує групу спойлерів, які відкриваються по-черзі
  */
 
-export function InitSpoiler(spoiler){
+function InitSpoiler(spoiler){
   // for iterable structures ----------------------------------------
   if (spoiler[Symbol.iterator] != undefined){
     spoiler.forEach(block => {

@@ -1,5 +1,5 @@
 
-export function initDrop(dropdown){
+function initDrop(dropdown){
   dropdown.children[0].addEventListener("focus", function (event) {
     event.target
       .closest(".dropdown")
