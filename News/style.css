@@ -1,0 +1,51 @@
+.card {
+  margin-bottom: 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  padding: 5px;
+	max-width: 450px;
+	height: 90px;
+	display: grid;
+  grid-template-columns: 50px 1fr;
+	overflow: hidden;
+	-moz-column-gap: 10px;
+	     column-gap: 10px;
+}
+
+.title {
+  height: 50px;
+  display: flex;
+  align-items: center;
+	margin: 0;
+	border-bottom: 1px solid #555;
+}
+
+.text {
+  grid-column: span 2;
+  text-align: justify;
+	margin: 0;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: normal;
+	display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.image {
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	overflow: hidden;
+	background-color: #999;
+	border: 1px solid #555;
+}
+
+.image img {
+	width: 100%;
+	height: 100%;
+	-o-object-fit: cover;
+	object-fit: cover;
+	-o-object-position: center;
+	object-position: center;
+}
