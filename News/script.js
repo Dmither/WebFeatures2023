@@ -1,9 +1,3 @@
-let img = document.createElement("img");
-
-Math.floor(Math.random() * 5000) + 1;
-Math.floor(Math.random() * 10) + 1;
-Math.floor(Math.random() * 100) + 1;
-
 function createPost(img, name, text) {
 	let card = document.createElement("div");
 	card.className = "card";
@@ -22,8 +16,6 @@ function createPost(img, name, text) {
 	card.append(article)
 
 	fetch(`https://jsonplaceholder.typicode.com/photos/${img}`)
-		// state: "fulfilled",
-		// value: Response {}
 		.then(response => response.json())
 		.then(json => {
 			image.innerHTML = `<img src='${json.url}'>`;
@@ -44,6 +36,11 @@ function createPost(img, name, text) {
 		});
 }
 
+createPost(
+	Math.floor(Math.random() * 5000) + 1,
+	Math.floor(Math.random() * 10) + 1,
+	Math.floor(Math.random() * 100) + 1
+);
 createPost(
 	Math.floor(Math.random() * 5000) + 1,
 	Math.floor(Math.random() * 10) + 1,
