@@ -60,29 +60,20 @@ let input = document.querySelector(".input");
 let list = document.querySelector(".list");
 
 let names = [];
-fetch("https://jsonplaceholder.typicode.com/users")
-	.then(data => data.json())
-	.then(users => {
-		names = users.map(item => item.name);
-		addNames(list, names);
-	});
+renderList();
 
-input.addEventListener("input", function (event) {
-	let value = event.target.value;
-	console.log(value);
-	if (value === "") {
-		list.innerHTML = "";
-		addNames(list, names);
-	} else {
-		list.innerHTML = "";
-		addNames(
-			list,
-			names.filter(
-				item => item.toLowerCase().indexOf(value.toLowerCase()) == 0
-			)
-		);
-	}
-});
+async function renderList() {
+	const users = await fetchUsers();
+	names = users.map(item => item.name);
+	addNames(list, names);
+}
+
+async function fetchUsers() {
+	const result = await fetch(
+		"https://jsonplaceholder.typicode.com/users"
+	);
+	return result.json();
+}
 
 function addNames(list, names) {
 	for (let item of names) {
@@ -91,3 +82,17 @@ function addNames(list, names) {
 		list.append(user);
 	}
 }
+
+input.addEventListener("input", function (event) {
+	let value = event.target.value.toLowerCase();
+	let lastValue;
+	if (value === lastValue) return;
+	for (const user of list.children) {
+		if (user.innerHTML.toLowerCase().startsWith(value)) {
+			user.classList.remove("hidden");
+		} else {
+			user.classList.add("hidden");
+		}
+	}
+	lastValue = value;
+});
