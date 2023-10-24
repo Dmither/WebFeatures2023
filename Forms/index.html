@@ -8,50 +8,30 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="wrapper">
-    <form action="">
-      <fieldset name="input mods"> 
-        <legend>input mods</legend> 
-        <p><input type="text"> text</p>
-        <p><input type="email"> email</p>
-        <p><input type="password"> password</p>
-        <p><input type="tel"> tel</p>
-        <p><input type="url"> url</p>
-        <p><input type="search"> search</p>
-        <p><input type="week"> week</p>
-        <p><input type="month"> month</p>
-        <p><input type="number"> number</p>
-        <p><input type="time"> time</p>
-        <p><input type="date"> date</p>
-        <p><input type="datetime-local"> datetime</p>
-        <p><input type="color"> color</p>
-        <p><input type="file"> file</p>
-        <p><input type="range" min="0" max="100" step="10"> range</p>
-        <p><input type="image"> image</p>
-      </fieldset>
-      
-      
-      <p><input type="radio"> radio</p>
-      <p><input type="checkbox"> checkbox</p>
-
-
-      <p><input type="hidden"> hidden</p>
-
-      <p><input type="button"> button</p>
-      <p><input type="reset"> reset</p>
-      <p><input type="submit"> submit</p>
-
-      <input list="browsers">
-
-      <datalist id="browsers">
-        <option value="Internet Explorer">
-        <option value="Firefox">
-        <option value="Chrome">
-        <option value="Opera">
-        <option value="Safari">
-      </datalist> 
-
+  <div class="container">
+    <h2>Authorization Form</h2>
+    <form action="process_auth.php" method="post">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="rememberMe" name="rememberMe">
+            <label for="rememberMe">Remember Me</label>
+        </div>
+        <div class="form-group">
+            <input type="submit" class="submit-button" value="Log In">
+        </div>
     </form>
-  </div>
+    <div class="forgot-password">
+        <a href="forgot_password.html">Forgot Password?</a>
+    </div>
+</div>
+
+  <script src="script.js"></script>
 </body>
 </html>
