@@ -178,12 +178,19 @@ https://www.smashingmagazine.com/2018/06/placeholder-attribute/
 
 ## CSS
 
-input:required {} - псевдоелемент для обов'язкових полів.    
-input:invalid {} - псевдоелемент для невалідних полів.  
-input:user-invalid {} - псевдоелемент невалідного поля лише після взаємодії.  
-accent-color: deeppink; - перефарбувати стандартні елементи в відповідний колір.  
-appearance: none; - видалити стилі платформи (браузера).  
+`input:required {}` - псевдоелемент для обов'язкових полів.    
+`input:invalid {}` - псевдоелемент для невалідних полів.  
+`input:user-invalid {}` - псевдоелемент невалідного поля лише після взаємодії.  
+`accent-color: deeppink;` - перефарбувати стандартні елементи в колір.  
+`appearance: none;` - видалити стилі платформи (браузера).  
 
 ## JS
 
-inputField.setCustomValidity("Show this message")
+`inputField.setCustomValidity("message")` - встановлює повідомлення валідації.  
+`event.target.checked` - перевіряє чи відмічений.  
+Валідація поля при втраті фокусу виводом тексту: якщо не валідне і має повідомлення, вивести це повідомлення поряд з полем.  
+`event.target.validity.valid` - чи валідне поле.  
+`event.target.validationMessage` - повідомлення валідації поля.  
+Для зручності додається можливість показати пароль змінюючи type="password" на type="text". MS Edge має вбудований, приховати в css ::-ms-reveal {dn}.  
+Залишитись на сторінці при відправлинні форми допоможе event.preventDefault() при прослуховуванні onsubmit. FormData надсилаються за допомогою Fetch API.  
+`new Formdata(form1)` - повертає об'єкт Formdata з даними форми.  

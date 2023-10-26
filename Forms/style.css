@@ -1,7 +1,9 @@
+@import url(../reset.css);
 body {
   font-family: Arial, sans-serif;
   background-color: #f2f2f2;
 }
+a {text-decoration: underline;}
 .container {
   background-color: #ffffff;
   max-width: 400px;
@@ -12,11 +14,16 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
   text-align: center;
 }
 label {
+  font-size: 16px;
   display: block;
-  margin-top: 10px;
+}
+input {
+  display: block;
 }
 input[type="text"],
 input[type="password"] {
@@ -30,7 +37,13 @@ input[type="checkbox"] {
   margin-right: 5px;
 }
 .form-group {
+  width: 100%;
   margin-bottom: 20px;
+  position: relative;
+}
+.form-group-inline {
+  display: flex;
+  align-items: center;
 }
 .forgot-password {
   text-align: right;
@@ -43,4 +56,13 @@ input[type="checkbox"] {
   border-radius: 3px;
   padding: 10px 15px;
   cursor: pointer;
+  font-size: 16px;
+}
+.form-message {
+  position: absolute;
+  bottom: -14px;
+  left: 0;
+  font-weight: 700;
+  font-size: 11px;
+  color: darkred
 }
